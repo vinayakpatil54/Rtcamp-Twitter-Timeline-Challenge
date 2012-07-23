@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>jQuery Plugin: divSlideShow</title>
+<script src="http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="jquery.divslideshow-1.2-min.js" type="text/javascript"></script>
+
+<script>
+$(document).ready(function(){
+	//make several slideshows with class selector, all slideshows shares the same parameters
+	$('.slideshow').divSlideShow(); 	
+	
+	//make one slideshow with id selector
+	$('#dss,#plug-and-play').divSlideShow({
+		height:180, 
+		width:350, 
+		arrow:"split",
+		loop:3,
+		slideContainerClass:"slide-container",
+		separatorClass:"separator", 
+		controlClass:"control",  
+		leftArrowClass:"control", 
+		rightArrowClass:"control", 
+		controlActiveClass:"control-active",
+		controlHoverClass:"control-hover",
+		controlContainerClass:"control-container"
+		
+	});
+	
+	/* 
+	Updates:
+		1.2 - some core functions have been rewritten
+			- slideshows can now be manipulated by custom controls (can be outside the slideshow) by using the function: $.divSlideShow.slideTo(slideShow, page)
+				- slideShow: a DOM object or a jquery-style selector string, e.g. '#slideshow'
+				- page: the target page, from 0 to (maxPage - 1)
+		1.1 - children no longer need to have the class "slide", all immediate children will become a slide (i.e. go down one level in the DOM tree)
+			- removed all default css classes
+			- renamed parameter: innerClass to slideContainerClass
+			- added parameters: controlHoverClass, controlContainerClass	
+	
+	Requirments:
+		jquery-1.4.2
+	
+	Paremeters [default]:
+		width	[200] - width of contents 
+		height	[100] - height of contents (exclude controls, which adds extra height below the contents)
+		arrow	["begin"] - position of the left/right arrow ("begin" or "end" or "split")
+		loop	[1]	- number of loops of slideshow, set to 0 to disable slideshow
+		delay	[5000] - time interval for slideshow, in milliseconds 
+		
+		leftArrowClass			[""] - css class for left arrow
+		rightArrowClass			[""] - css class for right arrow
+		slideContainerClass		[""] - css class for contents container
+		controlClass			[""] - css class for control buttons 
+		controlActiveClass		[""] - css class for active control buttons
+		controlHoverClass		[""] - css class for mouse-hovered control buttons
+		controlContainerClass	[""] - css class for the control button container
+		separatorClass			[""] - css class for separator between contents and control buttons
+	*/
+});
+
+function manipulate()
+{
+	$.divSlideShow.slideTo('#plug-and-play',$('#test_gotoPage').val()-1);
+}
+</script>
+<style>
+body{font-size:12px;font-family:Tahoma;}
+h1,h2,h3{font-size:14px;font-family:Tahoma;margin-bottom:0;}
+h2{font-size:12px;margin-top:0;}
+
+#plug-and-play {display:none; margin-bottom:20px; border:2px solid #aaaaaa;}
+#plug-and-play .slide{cursor:pointer;background:#e0e0e0;font-size:12px;font-family:Tahoma;border:1px solid #cccccc; margin:5px; padding:5px;}
+#plug-and-play .slide-container{background:#bbbbbb}
+#plug-and-play .separator{border:1px solid #aaaaaa;}
+#plug-and-play .control{font-size:10px; width:12px; cursor:pointer;}
+#plug-and-play .control-container{background:#bbbbbb;}
+#plug-and-play .control-active{text-decoration:underline;}
+#plug-and-play .control-hover{text-decoration:underline; font-weight:bold;}
+
+#dss {display:none;border:2px solid black;background:#8888ff}
+#dss .slide{cursor:pointer;background:#ff8888;font-size:12px;font-family:Tahoma;border:1px solid red; margin:5px; padding:5px;}
+#dss .slide-container{}
+#dss .separator{border:2px solid #22cc22;}
+#dss .control{font-size:10px; width:12px; cursor:pointer;}
+#dss .control-container{background:#88ff88;}
+#dss .control-active{text-decoration:underline;}
+#dss .control-hover{text-decoration:underline; font-weight:bold;}
+</style>
+
+</head>
+<body>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2463472320779347";
+/* 728x90, divSlideShow */
+google_ad_slot = "3741245244";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<h1 style="font-size:16px;">divSlideShow - A jQuery plugin </h1>
+<div style="padding:10px;border:2px solid #ddffff;background:#eeffff;width:400px;font-size:13px;">
+<p>
+	While most slideshow plugins on the web are for &lt;img&gt; only, 
+	divSlideShow provides a more flexible slideshow for &lt;div&gt;, 
+	you can embed anything inside a &lt;div&gt; and make it a slideshow, 
+	such as images, text, flash... anything that you normally included in a webpage, 
+	with only one line of javascript call. 
+</p>
+<a href="divslideshow.zip">Download Source</a>
+</div>
+
+<h1>Updates</h1>
+<div style="padding:10px;border:2px solid #ffdddd;background:#ffeeee;width:800px;font-size:13px;">
+<pre style="font-family:Tahoma;font-size:13px;">
+1.2 
+    - some core functions have been rewritten
+    - slideshows can now be manipulated by custom controls (can be outside the slideshow) by using the function: $.divSlideShow.slideTo(slideShow, page)
+        - slideShow: a DOM object or a jquery-style selector string, e.g. '#slideshow'
+        - page: the target page, from 0 to (maxPage - 1)
+1.1 
+    - children no longer need to have the class "slide", all immediate children will become a slide (i.e. go down one level in the DOM tree)
+    - removed all default css classes
+    - renamed parameter: innerClass to slideContainerClass
+    - added parameters: controlHoverClass, controlContainerClass	
+</pre>
+</div>
+<form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="kevinresol@gmail.com">
+<input type="hidden" name="item_name" value="Donte to divSlideShow (by Kevin ResoL)">
+<input type="hidden" name="bn"  value="ButtonFactory.PayPal.001">
+<input type="image" name="add" src="http://www.powersellersunite.com/buttonfactory/x-click-but04.gif">
+</form>
+<h1>Code Example:</h1>
+<div style="padding:10px 0 0 10px;border:2px solid #ddffdd;background:#eeffee;width:800px;font-size:13px;font:Courier New">
+<pre>
+&lt;script src='http://code.jquery.com/jquery-1.4.2.min.js' type='text/javascript'&gt;&lt;/script&gt;
+&lt;script src='jquery.divslideshow-1.1-min.js' type='text/javascript'&gt;&lt;/script&gt;
+
+
+&lt;div class='slideshow'&gt;
+    &lt;div class='slide'&gt;slide1&lt;/div&gt;
+    &lt;div class='slide'&gt;slide2&lt;/div&gt;
+    &lt;div class='slide'&gt;slide3&lt;/div&gt;
+    &lt;div class='slide'&gt;slide4&lt;/div&gt;
+    &lt;div class='slide'&gt;slide5&lt;/div&gt;
+    &lt;div class='slide'&gt;slide6&lt;/div&gt;
+    &lt;div class='slide'&gt;slide7&lt;/div&gt;
+    &lt;div class='slide'&gt;slide8&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;script&gt;
+    /* call divSlideShow without parameters */
+    $('.slideshow').divSlideShow();
+
+    /* call divSlideShow with parameters */
+    //$('.slideshow').divSlideShow( {width:300, height:150, arrow:'split', controlClass:'custom'} );
+&lt;/script&gt;
+</pre>
+</div>
+
+<h1>Paremeters [default]:</h1>
+<div style="padding:10px 0 0 10px;border:2px solid #ddddff;background:#eeeeff;width:700px;font-size:13px;">
+
+<table>
+<tr><td>width</td><td>[200] - width of contents</td></tr>
+<tr><td>height</td><td>[100] - height of contents (exclude controls, which adds extra height below the contents)</td></tr>
+<tr><td>arrow</td><td>["begin"] - position of the left/right arrow ("begin" or "end" or "split")</td></tr>
+<tr><td>loop</td><td>[1] - number of loops of slideshow, set to 0 to disable slideshow</td></tr>
+<tr><td>delay</td><td>[5000] - time interval for slideshow, in milliseconds </td></tr>
+<tr><td><br/></td></tr>
+<tr><td>leftArrowClass</td><td>[""] - css class for left arrow</td></tr>
+<tr><td>rightArrowClass</td><td>[""] - css class for right arrow</td></tr>
+<tr><td>slideContainerClass</td><td>[""] - css class for contents container</td></tr>
+<tr><td>controlClass</td><td>[""] - css class for control buttons </td></tr>
+<tr><td>controlActiveClass</td><td>[""] - css class for active control buttons</td></tr>
+<tr><td>controlHoverClass</td><td>[""] - css class for mouse-hovered control buttons</td></tr>
+<tr><td>controlContainerClass</td><td>[""] - css class for the control button container</td></tr>
+<tr><td>separatorClass</td><td>[""] - css class for separator between contents and control buttons</td></tr>	
+</table>
+
+</div>
+
+<h1>Demo:</h1>
+
+<h2>A css styled slideshow (check source file for css details)</h2>
+<div id="plug-and-play">
+	<div class="slide" >
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique dapibus dui, ac tincidunt nibh fermentum faucibus. Mauris tincidunt metus eget diam consequat tempus. Vestibulum ac urna id diam dignissim faucibus ac molestie purus. Etiam eget turpis neque, nec gravida magna. Curabitur aliquet imperdiet lacinia. Curabitur blandit dictum sollicitudin. Etiam. 
+	</div>
+	<div class="slide" >
+		Maecenas sed lacinia lacus. Donec lorem urna, posuere nec feugiat eget, porttitor sit amet quam. Quisque vel sem urna, in tincidunt enim. Morbi eget risus eget nisi dictum posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis porta elementum suscipit. Ut sapien libero, pulvinar iaculis sodales vel, ultricies sed mauris. In varius, dolor egestas gravida mollis, nulla risus lacinia augue, ut porta erat diam et sem. Etiam velit turpis, tristique quis tincidunt eget, consequat eget urna. Praesent nulla dui, tincidunt ac commodo ut, venenatis sed sapien. Cras ultrices egestas quam, vitae suscipit mauris imperdiet scelerisque. Suspendisse varius bibendum quam, eu imperdiet nisl adipiscing at. Cras aliquet elementum massa nec lacinia. 
+	</div>
+	<div class="slide" >
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra nisl id diam commodo auctor. Maecenas mi orci, malesuada nec ultrices vel, lacinia ut ante. Phasellus turpis lorem, ornare sit amet mattis ac, dapibus vitae quam. Donec lectus massa, vestibulum imperdiet hendrerit sed, dapibus eu lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer quis lorem in velit imperdiet dignissim. Duis sit amet mollis velit. Mauris vehicula orci eu metus mollis sit amet commodo lorem aliquam. Vivamus purus lacus, pretium porta euismod ac, auctor id dui. Fusce ultrices ipsum commodo lectus ultrices vel blandit sapien scelerisque. Nam placerat ante at erat sodales dignissim. In quis leo vel diam pellentesque varius at aliquam ipsum. Nulla facilisi. 
+	</div>
+	<div class="slide" >
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique dapibus dui, ac tincidunt nibh fermentum faucibus. Mauris tincidunt metus eget diam consequat tempus. Vestibulum ac urna id diam dignissim faucibus ac molestie purus. Etiam eget turpis neque, nec gravida magna. Curabitur aliquet imperdiet lacinia. Curabitur blandit dictum sollicitudin. Etiam. 
+	</div>
+	<div class="slide" >
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra nisl id diam commodo auctor. Maecenas mi orci, malesuada nec ultrices vel, lacinia ut ante. Phasellus turpis lorem, ornare sit amet mattis ac, dapibus vitae quam. Donec lectus massa, vestibulum imperdiet hendrerit sed, dapibus eu lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer quis lorem in velit imperdiet dignissim. Duis sit amet mollis velit. Mauris vehicula orci eu metus mollis sit amet commodo lorem aliquam. Vivamus purus lacus, pretium porta euismod ac, auctor id dui. Fusce ultrices ipsum commodo lectus ultrices vel blandit sapien scelerisque. Nam placerat ante at erat sodales dignissim. In quis leo vel diam pellentesque varius at aliquam ipsum. Nulla facilisi. 
+	</div>
+	<div class="slide" >
+		Maecenas sed lacinia lacus. Donec lorem urna, posuere nec feugiat eget, porttitor sit amet quam. Quisque vel sem urna, in tincidunt enim. Morbi eget risus eget nisi dictum posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis porta elementum suscipit. Ut sapien libero, pulvinar iaculis sodales vel, ultricies sed mauris. In varius, dolor egestas gravida mollis, nulla risus lacinia augue, ut porta erat diam et sem. Etiam velit turpis, tristique quis tincidunt eget, consequat eget urna. Praesent nulla dui, tincidunt ac commodo ut, venenatis sed sapien. Cras ultrices egestas quam, vitae suscipit mauris imperdiet scelerisque. Suspendisse varius bibendum quam, eu imperdiet nisl adipiscing at. Cras aliquet elementum massa nec lacinia. 
+	</div>
+</div>
+<p>
+	Go to page:
+	<input id="test_gotoPage" size="3" value="1">
+	<button onclick='manipulate()'>Go</button> <br/>
+</p>
+<h2>Colored to distinguish each elements</h2>
+<div id="dss">
+	<div class="slide" >
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique dapibus dui, ac tincidunt nibh fermentum faucibus. Mauris tincidunt metus eget diam consequat tempus. Vestibulum ac urna id diam dignissim faucibus ac molestie purus. Etiam eget turpis neque, nec gravida magna. Curabitur aliquet imperdiet lacinia. Curabitur blandit dictum sollicitudin. Etiam. 
+	</div>
+	<div class="slide" >
+		Maecenas sed lacinia lacus. Donec lorem urna, posuere nec feugiat eget, porttitor sit amet quam. Quisque vel sem urna, in tincidunt enim. Morbi eget risus eget nisi dictum posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis porta elementum suscipit. Ut sapien libero, pulvinar iaculis sodales vel, ultricies sed mauris. In varius, dolor egestas gravida mollis, nulla risus lacinia augue, ut porta erat diam et sem. Etiam velit turpis, tristique quis tincidunt eget, consequat eget urna. Praesent nulla dui, tincidunt ac commodo ut, venenatis sed sapien. Cras ultrices egestas quam, vitae suscipit mauris imperdiet scelerisque. Suspendisse varius bibendum quam, eu imperdiet nisl adipiscing at. Cras aliquet elementum massa nec lacinia. 
+	</div>
+	<div class="slide" >
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra nisl id diam commodo auctor. Maecenas mi orci, malesuada nec ultrices vel, lacinia ut ante. Phasellus turpis lorem, ornare sit amet mattis ac, dapibus vitae quam. Donec lectus massa, vestibulum imperdiet hendrerit sed, dapibus eu lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer quis lorem in velit imperdiet dignissim. Duis sit amet mollis velit. Mauris vehicula orci eu metus mollis sit amet commodo lorem aliquam. Vivamus purus lacus, pretium porta euismod ac, auctor id dui. Fusce ultrices ipsum commodo lectus ultrices vel blandit sapien scelerisque. Nam placerat ante at erat sodales dignissim. In quis leo vel diam pellentesque varius at aliquam ipsum. Nulla facilisi. 
+	</div>
+	<div class="slide" >
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique dapibus dui, ac tincidunt nibh fermentum faucibus. Mauris tincidunt metus eget diam consequat tempus. Vestibulum ac urna id diam dignissim faucibus ac molestie purus. Etiam eget turpis neque, nec gravida magna. Curabitur aliquet imperdiet lacinia. Curabitur blandit dictum sollicitudin. Etiam. 
+	</div>
+	<div class="slide" >
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra nisl id diam commodo auctor. Maecenas mi orci, malesuada nec ultrices vel, lacinia ut ante. Phasellus turpis lorem, ornare sit amet mattis ac, dapibus vitae quam. Donec lectus massa, vestibulum imperdiet hendrerit sed, dapibus eu lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer quis lorem in velit imperdiet dignissim. Duis sit amet mollis velit. Mauris vehicula orci eu metus mollis sit amet commodo lorem aliquam. Vivamus purus lacus, pretium porta euismod ac, auctor id dui. Fusce ultrices ipsum commodo lectus ultrices vel blandit sapien scelerisque. Nam placerat ante at erat sodales dignissim. In quis leo vel diam pellentesque varius at aliquam ipsum. Nulla facilisi. 
+	</div>
+	<div class="slide" >
+		Maecenas sed lacinia lacus. Donec lorem urna, posuere nec feugiat eget, porttitor sit amet quam. Quisque vel sem urna, in tincidunt enim. Morbi eget risus eget nisi dictum posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis porta elementum suscipit. Ut sapien libero, pulvinar iaculis sodales vel, ultricies sed mauris. In varius, dolor egestas gravida mollis, nulla risus lacinia augue, ut porta erat diam et sem. Etiam velit turpis, tristique quis tincidunt eget, consequat eget urna. Praesent nulla dui, tincidunt ac commodo ut, venenatis sed sapien. Cras ultrices egestas quam, vitae suscipit mauris imperdiet scelerisque. Suspendisse varius bibendum quam, eu imperdiet nisl adipiscing at. Cras aliquet elementum massa nec lacinia. 
+	</div>
+</div>
+<br/>
+<p><a href="divslideshow.zip">Download Source</a>
+<form method="post" action="https://www.paypal.com/cgi-bin/webscr" target="paypal">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="kevinresol@gmail.com">
+<input type="hidden" name="item_name" value="Donate to divSlideShow (by Kevin ResoL)">
+<input type="hidden" name="bn"  value="ButtonFactory.PayPal.001">
+<input type="image" name="add" src="http://www.powersellersunite.com/buttonfactory/x-click-butcc-donate.gif">
+</form>
+<p/>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2463472320779347";
+/* 728x90, divSlideShow */
+google_ad_slot = "3741245244";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</body>
+</html>

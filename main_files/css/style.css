@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+.leftarrow{
+ cursor:pointer;
+}
+
+.rightarrow{
+ cursor:pointer;
+}
+
+body{font-size:12px;font-family:Tahoma;}
+h1,h2,h3{font-size:14px;font-family:Tahoma;margin-bottom:0;}
+h2{font-size:12px;margin-top:0;}
+
+.divSlideShow {display:none; margin-bottom:20px; border:2px solid #aaaaaa;}
+.divSlideShow .slide{cursor:pointer;background:#e0e0e0;font-size:12px;font-family:Tahoma;border:1px solid #cccccc; margin:5px; padding:5px;}
+.divSlideShow .slide-container{background:#bbbbbb}
+.divSlideShow .separator{border:1px solid #aaaaaa;}
+.divSlideShow .control{font-size:10px; width:12px; cursor:pointer;}
+.divSlideShow .control-container{background:#bbbbbb;}
+.divSlideShow .control-active{text-decoration:underline;}
+.divSlideShow .control-hover{text-decoration:underline; font-weight:bold;}
+
+#dss {display:none;border:2px solid black;background:#8888ff}
+#dss .slide{cursor:pointer;background:#ff8888;font-size:12px;font-family:Tahoma;border:1px solid red; margin:5px; padding:5px;}
+#dss .slide-container{}
+#dss .separator{border:2px solid #22cc22;}
+#dss .control{font-size:10px; width:12px; cursor:pointer;}
+#dss .control-container{background:#88ff88;}
+#dss .control-active{text-decoration:underline;}
+#dss .control-hover{text-decoration:underline; font-weight:bold;}
